@@ -1,0 +1,13 @@
+applications:
+- services:
+  - kmtestapp-cloudantNoSQLDB
+  - kmtestapp-imfpush
+  - kmtestapp-AdvancedMobileAccess
+  disk_quota: 1024M
+  host: kmtestapp
+  name: kmtestapp
+  command: node app.js
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M
