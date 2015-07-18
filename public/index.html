@@ -1,1 +1,18 @@
-Hello from mobile backend application - please read the following pages for more information: <a href="https://www.ng.bluemix.net/docs/#starters/mobile.html">Creating mobile applications</a>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<html>
+<head>
+    <title></title>
+    <script type="" src="kmtest.js"></script>
+    <script>
+	    test = new KMtest();
+	</script>
+</head>
+
+<body>
+    Hello from mobile backend application - please read the following pages for more information: <a href="https://www.ng.bluemix.net/docs/#starters/mobile.html">Creating mobile applications</a><br><br>
+    <input type="text" id="inputtext" /><br>
+    <button onclick="test.simpleEval(document.getElementById('inputtext').value);">EVAL<button/><br>
+    <div id="result"></div>
+</body>
+</html>
