@@ -23,6 +23,9 @@ app.get('/', function(req, res){
 
 // create a public static content service
 app.use("/public", express.static(__dirname + '/public'));
+app.use("/css", express.static(__dirname + '/public/css'));
+app.use("/js", express.static(__dirname + '/public/js'));
+app.use("/fonts", express.static(__dirname + '/public/fonts'));
 
 // create another static content service, and protect it with imf-backend-strategy
 app.use("/protected", passport.authenticate('imf-backend-strategy', {session: false }));
