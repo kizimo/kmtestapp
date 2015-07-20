@@ -3,16 +3,91 @@
 <html>
 <head>
     <title></title>
-    <script type="" src="kmtest.js"></script>
-    <script>
-	    test = new KMtest();
-	</script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/kmtest.js"></script>
 </head>
 
 <body>
-    Hello from mobile backend application - please read the following pages for more information: <a href="https://www.ng.bluemix.net/docs/#starters/mobile.html">Creating mobile applications</a><br><br>
-    <input type="text" id="inputtext" /><br>
-    <button onclick="test.simpleEval(document.getElementById('inputtext').value);">EVAL<button/><br>
-    <div id="result"></div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 minlayout">
+			<div id="infoAlert" class="alert alert-success alert-dismissable" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"> Got it!</span></button>
+				<strong>Input a number or click the refresh button.</strong>
+			</div>
+			<div id="nanAlert" class="alert alert-danger alert-dismissable collapse" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<strong>Please use a number!</strong>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 minlayout">
+			<div class="jumbotron box">
+				<p><input type="text" id="inputtext" class="inputfield"/></p>
+				<div class="btn-group whole" role="group" >
+					<button class="btn btn-warning btn-lg thirds" type="button" onclick="test.genRandNum();"><i class="glyphicon glyphicon-refresh"></i></button>
+					<button class="btn btn-primary btn-lg thirds" type="button" onclick="test.simpleEval();"><i class="glyphicon glyphicon-play"></i></button>
+					<button class="btn btn-info btn-lg thirds" type="button" onclick="test.advEval();"><i class="glyphicon glyphicon-expand"></i></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="bluemixModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <br>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/IBM_Bluemix_logo.svg/2000px-IBM_Bluemix_logo.svg.png" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="ibmbluemixModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <br>
+        <img src="https://camo.githubusercontent.com/f6ffbdd234fc347b6a42ceaa42e677bc160524f8/687474703a2f2f7777772e636f6d70617265746865636c6f75642e6e65742f77702d636f6e74656e742f75706c6f6164732f323031342f30362f69626d2d626c75656d69785f70722d3033303531342e6a7067" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="ibmModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <br>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2000px-IBM_logo.svg.png" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="failModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <br>
+        <img src="price-is-right-bob-barker-fail-sign.jpg" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio id="failAudio">
+  <source src="tpirhorns.mp3" type="audio/mpeg">
+</audio>
+<script>
+	test = new KMtest();
+	test.genRandNum();
+</script>
 </body>
 </html>
